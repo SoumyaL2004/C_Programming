@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>  // for rand() and srand()
+#include <time.h>    // for time()
+
+int main() {
+    // Seed the random number generator with current time
+    srand(time(0));  
+
+    // Generate a random number between 0 and RAND_MAX
+    int num = rand();
+    // If you want random number in a specific range, e.g. 1 to 100
+    int numInRange = (rand() % 100) + 1;
+   
+   for (int i = 0; i<1000; i++){
+   printf("Guess the word:");
+   int Guess;
+   scanf("%d", &Guess);
+   
+   if(Guess > numInRange){
+       printf(" Please enter the Lower Value \n");
+   }
+   
+   else if(Guess < numInRange){
+       printf(" Please enter the Higher Value \n");
+   }
+   
+   else if(Guess == numInRange){
+       printf(" Wow!! You entered the correct value... \n");
+   }
+}
+    return 0;
+}
