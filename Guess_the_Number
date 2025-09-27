@@ -11,22 +11,25 @@ int main() {
     // If you want random number in a specific range, e.g. 1 to 100
     int numInRange = (rand() % 100) + 1;
    
-   for (int i = 0; i<1000; i++){
-   printf("Guess the word:");
-   int Guess;
-   scanf("%d", &Guess);
+   for (int i = 1; i<1000; i++){
+       int points = 100-i ;
+       printf("Guess the word:");
+       int Guess=0; 
+       scanf("%d", &Guess);
    
-   if(Guess > numInRange){
-       printf(" Please enter the Lower Value \n");
-   }
+       if(Guess > numInRange){
+           printf("Please enter the Lower Value \n");
+       }
    
-   else if(Guess < numInRange){
-       printf(" Please enter the Higher Value \n");
-   }
+       else if(Guess < numInRange){
+           printf("Please enter the Higher Value \n");  
+       }
    
-   else if(Guess == numInRange){
-       printf(" Wow!! You entered the correct value... \n");
+      else if(Guess == numInRange){
+          printf("Wow!! You entered the correct value... \n");
+           printf("You have earned the %d points \n", points);
+          break;
+      }
    }
-}
-    return 0;
+   return 0;
 }
